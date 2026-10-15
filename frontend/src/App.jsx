@@ -33,8 +33,7 @@ const App = () => {
   const toggleImportanceOf = id => {
     const note = notes.find(n => n.id === id)
     const changedNote = { ...note, important: !note.important }
-    
-    // console.log("update")
+
     noteService
       .update(id, changedNote)
       .then(returnedNote => {
@@ -55,6 +54,7 @@ const App = () => {
     setNewNote(event.target.value)
   }
 
+  // console.log("notes to show")
   const notesToShow = showAll ? notes : notes.filter(note => note.important)
 
   return (
